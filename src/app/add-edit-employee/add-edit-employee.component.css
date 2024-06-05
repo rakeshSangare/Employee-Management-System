@@ -1,0 +1,41 @@
+/* Styles for the title class */
+.title {
+    /* Background color set to aqua */
+    background-color: aqua;
+    
+    /* Text alignment centered */
+    text-align: center;
+    
+    /* Height set to adjust automatically */
+    height:auto;
+}
+
+/* Styles for the row class */
+.row {
+    /* Flex display to arrange elements in a row */
+    display: flex;
+    
+    /* Gap between elements set to 5px */
+    gap: 5px;
+    
+    /* Padding added to the top */
+    padding-top: 5px;
+    
+    /* Styles for material form fields */
+    mat-form-field {
+        /* Set width to 100% */
+        width: 100%;
+    }
+}
+
+/* Styles for the action class */
+.action {
+    /* Padding set for top, right, and bottom */
+    padding: 0px,25px,20px;
+    
+    /* Styles for button elements */
+    button {
+        /* Flex property set to 1 for equal distribution */
+        flex: 1;
+    }
+}

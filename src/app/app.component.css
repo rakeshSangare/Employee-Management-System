@@ -1,0 +1,32 @@
+/* CSS for the example-spacer class */
+.example-spacer {
+  /* Flex properties for spacing */
+  flex: 1 1 auto;
+}
+
+/* CSS for the main-body class */
+.main-body {
+  /* Set width to adjust automatically */
+  width: auto;
+  
+  /* Add padding to the top */
+  padding-top: 20px;
+  
+  /* Center the element horizontally */
+  margin: 0 auto;
+  
+  /* Styles for material form fields */
+  mat-form-field {
+      /* Set width to 100% */
+      width: 100%;
+  }
+}
+
+/* CSS for the action class */
+.action {
+  /* Display flex for arranging elements in a row */
+  display: flex;
+  
+  /* Gap between elements set to 5px */
+  gap: 5px;
+}

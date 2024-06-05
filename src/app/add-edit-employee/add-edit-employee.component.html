@@ -1,0 +1,93 @@
+<!-- Dialog title section -->
+<div mat-dialog-title class="title">
+    <!-- Title for the dialog -->
+    <h3>Employee Form</h3>
+</div>
+
+<!-- Form section -->
+<form [formGroup]="empForm" (ngSubmit)="onSubmit()">
+    <!-- Dialog content section -->
+    <div mat-dialog-content>
+        <!-- First row for first name and last name -->
+        <div class="row">
+            <!-- Form field for first name -->
+            <mat-form-field appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="ex. Rakesh" type="text" formControlName="firstName">
+            </mat-form-field>
+            <!-- Form field for last name -->
+            <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="ex. Sangare" type="text" formControlName="lastName">
+            </mat-form-field>        
+        </div>
+        
+        <!-- Second row for email and date of birth -->
+        <div class="row">
+            <!-- Form field for email -->
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="ex. mat@gmail.com" type="email" formControlName="email">
+            </mat-form-field>
+            <!-- Form field for date of birth -->
+            <mat-form-field appearance="outline">
+                <mat-label>Date of Birth</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dob">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        
+        <!-- Third row for gender selection -->
+        <div class="row">
+            <!-- Radio group for gender selection -->
+            <mat-radio-group aria-label="Select an option" formControlName="gender">
+                <mat-label><b>Gender</b></mat-label>
+                <!-- Radio buttons for gender selection -->
+                <mat-radio-button value="male">Male</mat-radio-button>
+                <mat-radio-button value="female">Female</mat-radio-button>
+                <mat-radio-button value="others">Others</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        
+        <!-- Fourth row for education and company -->
+        <div class="row">
+            <!-- Form field for education selection -->
+            <mat-form-field appearance="outline">
+                <mat-label>Education</mat-label>
+                <!-- Select dropdown for education -->
+                <mat-select formControlName="education">
+                    <mat-option *ngFor="let val of education" [value]="val">{{val}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <!-- Form field for company -->
+            <mat-form-field appearance="outline">
+                <mat-label>Company</mat-label>
+                <input matInput placeholder="ex. Reliance" type="text" formControlName="company">
+            </mat-form-field>
+        </div>
+        
+        <!-- Fifth row for experience and package -->
+        <div class="row">
+            <!-- Form field for experience -->
+            <mat-form-field appearance="outline">
+                <mat-label>Experience</mat-label>
+                <input matInput placeholder="ex. 5" type="number" formControlName="experience">
+            </mat-form-field>
+            <!-- Form field for package -->
+            <mat-form-field appearance="outline">
+                <mat-label>Package</mat-label>
+                <input matInput placeholder="ex. 4 LPA" type="number" formControlName="package">
+            </mat-form-field>
+        </div>
+    </div>
+    
+    <!-- Dialog actions section -->
+    <div mat-dialog-actions class="action">
+        <!-- Button to cancel the dialog -->
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+        <!-- Button to submit the form -->
+        <button mat-raised-button color="primary" type="submit">{{ data ? 'Update':'Save' }}</button>
+    </div>
+</form>

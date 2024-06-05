@@ -1,27 +1,135 @@
-# CrudApplication
+# Employee Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
+A CRUD (Create, Read, Update, Delete) application built with Angular and Angular Material for managing employee records efficiently.
 
-## Development server
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Introduction
 
-## Code scaffolding
+The Employee Management System is a web application designed to streamline the process of managing employee records. It allows users to perform operations such as adding new employees, editing existing employee details, deleting employees, and viewing a list of employees with various filtering and sorting options.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+- Add new employee records
+- Edit existing employee records
+- Delete employee records
+- View a list of all employees
+- Filter employees by name or other criteria
+- Sort employees by various fields
+- Paginate the employee list
+- Snackbar notifications for user feedback
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Technologies Used
 
-## Running unit tests
+- Angular
+- Angular Material
+- TypeScript
+- HTML
+- CSS
+- RxJS
+- JSON Server (for mock backend)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installation
 
-## Running end-to-end tests
+1. Clone the repository:
+   
+   git clone https://github.com/yourusername/employee-management-system.git
+   
+2. Navigate to the project directory:
+   
+   cd employee-management-system
+   
+3. Install the dependencies:
+   
+   npm install
+   
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Usage
 
-## Further help
+1. Start the mock backend server:
+   
+   npx json-server --watch db.json
+   
+2. Start the Angular development server:
+   
+   ng serve
+   
+3. Open your browser and navigate to `http://localhost:4200`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Project Structure
+
+
+employee-management-system/
+├── src/
+│   ├── app/
+│   │   ├── add-edit-employee/
+│   │   │   ├── add-edit-employee.component.html
+│   │   │   ├── add-edit-employee.component.ts
+│   │   │   ├── add-edit-employee.component.css
+│   │   ├── services/
+│   │   │   ├── employee.service.ts
+│   │   │   ├── snackbar.service.ts
+│   │   ├── app.component.html
+│   │   ├── app.component.ts
+│   │   ├── app.component.css
+│   ├── assets/
+│   ├── environments/
+│   ├── index.html
+│   ├── main.ts
+│   ├── styles.css
+├── angular.json
+├── package.json
+├── README.md
+├── tsconfig.json
+└── db.json
+
+
+## Contributing
+
+Contributions are welcome! Please fork this repository and submit pull requests for any features, bug fixes, or enhancements.
+
+1. Fork the project.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/your-feature`).
+5. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+
+
+### Notes:
+
+1. Make sure to replace the repository URL in the `git clone` command with the actual URL of your repository.
+2. Include a `db.json` file for the mock backend server using JSON Server. Here’s an example:
+
+{
+  "employees": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@example.com",
+      "dob": "1990-01-01",
+      "gender": "male",
+      "education": "Graduate",
+      "company": "ABC Corp",
+      "experience": 5,
+      "package": 600000
+    },
+    ...
+  ]
+}
+
+
+3. Adjust the `Contributing` section based on your preferred contribution guidelines.
+4. Include a `LICENSE` file in your repository for the MIT License or any other license you choose.
